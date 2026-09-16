@@ -1,0 +1,3 @@
+# Preview build. Not for indexing until the domain cutover.
+User-agent: *
+Disallow: /
