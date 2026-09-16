@@ -529,3 +529,11 @@ html:not(.js) .rv { opacity: 1; transform: none; }
 /* ---------- simple two column prose ---------- */
 .split { display: grid; grid-template-columns: 1fr; gap: 34px; }
 @media (min-width: 900px) { .split { grid-template-columns: 1fr 1fr; gap: 56px; } }
+
+/* ---------- opening hours ---------- */
+.hours { margin-top: 1.1em; }
+.hours li {
+  display: flex; justify-content: space-between; gap: 1.2em;
+  font-size: .87rem; margin-bottom: .45em; color: rgba(255,255,255,.62);
+}
+.hours li span:first-child { color: rgba(255,255,255,.82); }
