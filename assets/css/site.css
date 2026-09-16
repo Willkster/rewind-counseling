@@ -106,8 +106,8 @@ a  { color: var(--teal-deep); }
 .btn-primary:hover { background: var(--teal-deep); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(31,107,112,.3); }
 .btn-ghost { border-color: rgba(0,25,57,.22); color: var(--navy); background: transparent; }
 .btn-ghost:hover { border-color: var(--navy); background: rgba(0,25,57,.045); transform: translateY(-2px); }
-.on-navy .btn-primary { background: var(--teal); color: #032027; box-shadow: 0 8px 22px rgba(0,0,0,.28); }
-.on-navy .btn-primary:hover { background: var(--teal-light); transform: translateY(-2px); }
+.on-navy .btn-primary { background: var(--teal-light); color: var(--navy); box-shadow: 0 8px 22px rgba(0,0,0,.28); }
+.on-navy .btn-primary:hover { background: var(--white); color: var(--navy); transform: translateY(-2px); }
 .on-navy .btn-ghost { border-color: rgba(255,255,255,.32); color: #fff; }
 .on-navy .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,.08); }
 
