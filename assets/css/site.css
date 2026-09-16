@@ -181,8 +181,8 @@ a  { color: var(--teal-deep); }
   border-radius: var(--radius);
   padding: 20px 22px;
   box-shadow: var(--shadow-lift);
-  max-width: 310px;
-  margin: -46px 0 0 16px;
+  max-width: min(310px, 100%);
+  margin: -46px 0 0;
   position: relative;
 }
 .hero-card p { margin: 0; font-size: .93rem; line-height: 1.55; color: var(--ink); }
