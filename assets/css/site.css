@@ -147,19 +147,72 @@ a  { color: var(--teal-deep); }
 
 @media (max-width: 900px) {
   .nav, .nav-cta { display: none; }
+
+  /* hamburger */
   .nav-toggle {
-    display: inline-flex; flex-direction: column; justify-content: center; gap: 5px;
-    width: 46px; height: 46px; padding: 0 11px; background: transparent;
-    border: 1px solid var(--line); border-radius: 10px; cursor: pointer;
+    display: inline-flex; flex-direction: column; justify-content: center; align-items: center;
+    gap: 5px; width: 46px; height: 46px; flex: none;
+    background: transparent; border: 1px solid var(--line); border-radius: 12px;
+    cursor: pointer; -webkit-tap-highlight-color: transparent;
+    transition: background-color .3s var(--ease), border-color .3s var(--ease);
   }
-  .nav-toggle span { display: block; height: 2px; background: var(--navy); border-radius: 2px; transition: transform .3s var(--ease), opacity .2s; }
+  .nav-toggle span {
+    display: block; width: 20px; height: 2px; background: var(--navy); border-radius: 2px;
+    transition: transform .34s var(--ease), opacity .18s var(--ease), background-color .3s var(--ease);
+  }
+  .nav-toggle[aria-expanded="true"] { background: var(--navy); border-color: var(--navy); }
+  .nav-toggle[aria-expanded="true"] span { background: #fff; }
   .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
   .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .mobile-nav { display: none; border-top: 1px solid var(--line); padding: 14px 0 26px; }
-  .mobile-nav.open { display: block; }
-  .mobile-nav a { display: block; padding: 13px 0; font-size: 1.05rem; font-weight: 550; color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--line); }
-  .mobile-nav .btn { margin-top: 18px; width: 100%; }
+
+  /* panel. .wrap supplies the 24px side gutter, so only ever set padding-block here */
+  .mobile-nav {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    padding-block: 0;
+    border-top: 1px solid transparent;
+    transition: max-height .42s var(--ease), opacity .3s var(--ease),
+                padding-block .42s var(--ease), visibility .42s var(--ease),
+                border-color .42s var(--ease);
+  }
+  .mobile-nav.open {
+    max-height: min(72vh, 520px);
+    overflow-y: auto;
+    opacity: 1;
+    visibility: visible;
+    padding-block: 8px 22px;
+    border-top-color: var(--line);
+    -webkit-overflow-scrolling: touch;
+  }
+  .mobile-nav a:not(.btn):not(.mobile-call) {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 15px 2px; font-size: 1.06rem; font-weight: 550;
+    color: var(--navy); text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mobile-nav a:not(.btn):not(.mobile-call)::after {
+    content: ""; width: 8px; height: 8px; flex: none;
+    border-right: 2px solid var(--teal); border-bottom: 2px solid var(--teal);
+    transform: rotate(-45deg); opacity: .55;
+    transition: transform .3s var(--ease), opacity .3s var(--ease);
+  }
+  .mobile-nav a:not(.btn):not(.mobile-call):active { color: var(--teal-deep); }
+  .mobile-nav a:not(.btn):not(.mobile-call):active::after { transform: rotate(-45deg) translate(2px, 2px); opacity: 1; }
+  .mobile-nav a[aria-current="page"] { color: var(--teal-deep); }
+  .mobile-nav .btn { margin-top: 16px; width: 100%; }
+  .mobile-call {
+    display: flex; align-items: center; justify-content: center; gap: .5em;
+    margin-top: 12px; padding: 12px; font-size: .92rem; font-weight: 550;
+    color: var(--muted); text-decoration: none;
+  }
+  .mobile-call svg { flex: none; color: var(--teal-deep); }
+
+  /* solid header while the panel is open, so page content cannot show through it */
+  body.nav-open .site-header { background: var(--sand); }
 }
 @media (min-width: 901px) { .mobile-nav { display: none !important; } }
 

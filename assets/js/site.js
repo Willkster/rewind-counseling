@@ -10,17 +10,38 @@
   var toggle = document.querySelector('.nav-toggle');
   var mobile = document.querySelector('.mobile-nav');
   if (toggle && mobile) {
-    toggle.addEventListener('click', function () {
-      var open = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!open));
-      mobile.classList.toggle('open', !open);
+    var isOpen = function () { return toggle.getAttribute('aria-expanded') === 'true'; };
+    var setOpen = function (open) {
+      toggle.setAttribute('aria-expanded', String(open));
+      mobile.classList.toggle('open', open);
+      document.body.classList.toggle('nav-open', open);
+    };
+
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      setOpen(!isOpen());
     });
+
+    /* choosing a destination closes the panel */
     mobile.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A') {
-        toggle.setAttribute('aria-expanded', 'false');
-        mobile.classList.remove('open');
-      }
+      if (e.target.closest('a')) setOpen(false);
     });
+
+    /* escape closes it and hands focus back to the button */
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && isOpen()) { setOpen(false); toggle.focus(); }
+    });
+
+    /* a tap anywhere outside the header closes it */
+    document.addEventListener('click', function (e) {
+      if (isOpen() && !e.target.closest('.site-header')) setOpen(false);
+    });
+
+    /* rotating or resizing into the desktop layout resets the state */
+    var wide = window.matchMedia('(min-width: 901px)');
+    var onWide = function (e) { if (e.matches) setOpen(false); };
+    if (wide.addEventListener) wide.addEventListener('change', onWide);
+    else if (wide.addListener) wide.addListener(onWide);
   }
 
   /* ---- header hairline once scrolled ---- */
