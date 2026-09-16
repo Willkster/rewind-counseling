@@ -488,3 +488,44 @@ html:not(.js) .rv { opacity: 1; transform: none; }
 }
 .callout p { margin: 0; font-size: .95rem; color: var(--ink); }
 .callout strong { color: var(--navy); }
+
+/* ---------- honest placeholder ---------- */
+.tbd {
+  display: inline-block;
+  background: rgba(196,107,58,.1);
+  border: 1px dashed rgba(196,107,58,.55);
+  color: #8A4620;
+  border-radius: 6px;
+  padding: 1px 8px;
+  font-size: .88em;
+  font-weight: 550;
+  font-style: normal;
+}
+
+/* ---------- two-path chooser ---------- */
+.paths { display: grid; grid-template-columns: 1fr; gap: 18px; }
+@media (min-width: 760px) { .paths { grid-template-columns: repeat(2, 1fr); } }
+.path {
+  display: flex; flex-direction: column;
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 30px 28px 26px; text-decoration: none; color: inherit;
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s var(--ease);
+}
+.path:hover { transform: translateY(-5px); box-shadow: var(--shadow-lift); border-color: var(--teal); }
+.path h2 { font-size: 1.32rem; margin-bottom: .4em; }
+.path p { color: var(--muted); font-size: .96rem; margin: 0 0 18px; }
+.path .card-more { margin-top: auto; }
+
+/* ---------- plain prose list ---------- */
+.ticks { list-style: none; margin: 0; padding: 0; }
+.ticks li { position: relative; padding-left: 30px; margin-bottom: .75em; font-size: .97rem; }
+.ticks li::before {
+  content: ""; position: absolute; left: 2px; top: .34em;
+  width: 15px; height: 8px; border-left: 2px solid var(--teal); border-bottom: 2px solid var(--teal);
+  transform: rotate(-45deg);
+}
+.on-navy .ticks li::before { border-color: var(--teal-light); }
+
+/* ---------- simple two column prose ---------- */
+.split { display: grid; grid-template-columns: 1fr; gap: 34px; }
+@media (min-width: 900px) { .split { grid-template-columns: 1fr 1fr; gap: 56px; } }
