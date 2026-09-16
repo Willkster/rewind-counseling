@@ -348,3 +348,85 @@ html:not(.js) .rv { opacity: 1; transform: none; }
   position: absolute; width: 1px; height: 1px; overflow: hidden;
   clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
 }
+
+/* ---------- linked card ---------- */
+.card-link { text-decoration: none; color: inherit; }
+.card-link:hover { border-color: var(--teal); }
+.card-more {
+  margin-top: 16px;
+  display: inline-flex; align-items: center; gap: .45em;
+  font-size: .88rem; font-weight: 600; color: var(--teal-deep);
+}
+.card-more svg { transition: transform .32s var(--ease); }
+.card-link:hover .card-more svg { transform: translateX(4px); }
+
+/* ---------- page hero (interior pages) ---------- */
+.page-hero { position: relative; overflow: hidden; padding-block: clamp(46px, 6vw, 78px) clamp(38px, 5vw, 58px); }
+.page-hero .wrap { position: relative; z-index: 2; max-width: 880px; }
+.page-hero h1 { font-size: clamp(2.1rem, 5.4vw, 3.5rem); }
+.crumb { font-size: .85rem; color: var(--muted); margin-bottom: 1.6em; }
+.crumb a { color: var(--muted); text-decoration: none; }
+.crumb a:hover { color: var(--teal-deep); text-decoration: underline; }
+.crumb span { opacity: .5; margin-inline: .45em; }
+
+/* ---------- how it works strip ---------- */
+.steps { display: grid; grid-template-columns: 1fr; gap: 20px; counter-reset: step; }
+@media (min-width: 760px) { .steps { grid-template-columns: repeat(4, 1fr); gap: 24px; } }
+.step { position: relative; padding-top: 20px; border-top: 2px solid var(--line); }
+.step::before {
+  counter-increment: step; content: counter(step);
+  font-family: var(--serif); font-size: .82rem; font-weight: 700;
+  color: var(--teal-deep); display: block; margin-bottom: .5em;
+}
+.step h3 { font-size: 1.02rem; margin-bottom: .3em; }
+.step p { font-size: .9rem; color: var(--muted); margin: 0; }
+
+/* ---------- track (intensive type) ---------- */
+.track {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(26px, 3.4vw, 40px);
+  margin-bottom: 20px;
+}
+.track-head {
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  justify-content: space-between; gap: 10px 20px;
+  padding-bottom: 20px; margin-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+.track-head h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 0; }
+.price {
+  font-family: var(--serif); font-size: 1.16rem; font-weight: 600;
+  color: var(--teal-deep); white-space: nowrap;
+}
+.price small { display: block; font-family: var(--sans); font-size: .76rem; font-weight: 500; color: var(--muted); letter-spacing: .01em; }
+
+.phases { margin: 0; }
+.phases dt {
+  font-family: var(--sans); font-size: .73rem; font-weight: 650;
+  letter-spacing: .15em; text-transform: uppercase; color: var(--teal-deep);
+  margin-bottom: .6em;
+}
+.phases dd { margin: 0 0 24px; font-size: .97rem; color: var(--ink); }
+.phases dd:last-of-type { margin-bottom: 0; }
+.phases .aside { font-size: .9rem; color: var(--muted); font-style: italic; margin-top: -14px; margin-bottom: 24px; }
+
+.addons { margin: 10px 0 0; padding: 0; list-style: none; }
+.addons li { position: relative; padding-left: 26px; margin-bottom: .6em; font-size: .95rem; }
+.addons li::before {
+  content: ""; position: absolute; left: 4px; top: .62em;
+  width: 7px; height: 7px; border-radius: 50%; background: var(--teal);
+}
+.track-foot { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 13px; align-items: center; }
+
+/* ---------- callout ---------- */
+.callout {
+  border-left: 3px solid var(--teal);
+  background: rgba(52,140,145,.055);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 22px 26px;
+  margin: 34px 0 0;
+}
+.callout p { margin: 0; font-size: .95rem; color: var(--ink); }
+.callout strong { color: var(--navy); }
