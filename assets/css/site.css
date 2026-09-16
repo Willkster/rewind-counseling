@@ -410,7 +410,12 @@ html:not(.js) .rv { opacity: 1; transform: none; }
 }
 .phases dd { margin: 0 0 24px; font-size: .97rem; color: var(--ink); }
 .phases dd:last-of-type { margin-bottom: 0; }
-.phases .aside { font-size: .9rem; color: var(--muted); font-style: italic; margin-top: -14px; margin-bottom: 24px; }
+.phases .aside {
+  font-size: .9rem; color: var(--muted); font-style: italic;
+  margin: 15px 0 0;
+  padding-left: 15px;
+  border-left: 2px solid var(--line);
+}
 
 .addons { margin: 10px 0 0; padding: 0; list-style: none; }
 .addons li { position: relative; padding-left: 26px; margin-bottom: .6em; font-size: .95rem; }
