@@ -591,3 +591,10 @@ html:not(.js) .rv { opacity: 1; transform: none; }
 /* homepage team card links through to the full bio */
 .member-link { display: block; text-decoration: none; color: inherit; }
 .member-link:hover h3 { color: var(--teal-deep); }
+
+/* intensives delivery team */
+.pillar .who {
+  font-family: var(--sans); font-size: .74rem; font-weight: 650;
+  letter-spacing: .13em; text-transform: uppercase;
+  color: var(--teal-light); margin: 0 0 .9em;
+}
