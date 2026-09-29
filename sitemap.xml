@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Preview build. Replace the domain and remove noindex at cutover. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.rewindcounseling.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://www.rewindcounseling.com/services.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.rewindcounseling.com/intensives.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.rewindcounseling.com/meet-the-team.html</loc><priority>0.9</priority></url>
+  <url><loc>https://www.rewindcounseling.com/contact.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.rewindcounseling.com/about.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.rewindcounseling.com/join-our-team.html</loc><priority>0.5</priority></url>
+</urlset>
