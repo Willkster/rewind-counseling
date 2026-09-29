@@ -1,3 +1,4 @@
-# Preview build. Not for indexing until the domain cutover.
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://www.rewindcounseling.com/sitemap.xml
