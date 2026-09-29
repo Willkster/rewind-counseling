@@ -1,4 +1,3 @@
+# Preview build. Replaced at cutover by tools/launch.sh
 User-agent: *
-Allow: /
-
-Sitemap: https://www.rewindcounseling.com/sitemap.xml
+Disallow: /
