@@ -14,7 +14,7 @@
   --muted: #5C6B7A;
   --line: #E2DDD4;
 
-  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --serif: "SaneJ", "Fraunces", Georgia, "Times New Roman", serif;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   --wrap: 1180px;
@@ -42,6 +42,17 @@ body {
 }
 
 img { max-width: 100%; height: auto; display: block; }
+
+/* Fraunces draws a capital J with a deep hooked descender that reads as odd in
+   a name. WONK and stylistic sets ss01-ss04 all produce the same glyph, so the
+   only fix is to borrow a J from another serif. unicode-range limits this to
+   U+004A, so every other character stays Fraunces. If none of these fonts are
+   installed the rule is skipped and Fraunces' own J is used, same as before. */
+@font-face {
+  font-family: "SaneJ";
+  src: local("Georgia"), local("Times New Roman"), local("Noto Serif"), local("Liberation Serif");
+  unicode-range: U+004A;
+}
 
 h1, h2, h3 {
   font-family: var(--serif);
