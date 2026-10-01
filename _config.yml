@@ -1,0 +1,7 @@
+# Keeps internal documentation out of the published site.
+# These stay in the repo, they just are not served at rewindcounseling.com.
+exclude:
+  - CUTOVER.md
+  - README.md
+  - tools
+  - _config.yml
