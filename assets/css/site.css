@@ -616,3 +616,7 @@ html:not(.js) .rv { opacity: 1; transform: none; }
   letter-spacing: .13em; text-transform: uppercase;
   color: var(--teal-light); margin: 0 0 .9em;
 }
+
+/* Psychology Today verified seal in the footer */
+.sx-verified-seal { display: block; margin-top: 18px; max-width: 150px; }
+.sx-verified-seal img { max-width: 100%; height: auto; display: block; }
