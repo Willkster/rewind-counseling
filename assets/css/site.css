@@ -322,7 +322,7 @@ a  { color: var(--teal-deep); }
 /* ---------- team ---------- */
 .team { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 18px; }
 @media (min-width: 720px)  { .team { grid-template-columns: repeat(3, 1fr); } }
-@media (min-width: 1000px) { .team { grid-template-columns: repeat(5, 1fr); } }
+@media (min-width: 1000px) { .team { grid-template-columns: repeat(6, 1fr); } }
 .member { text-align: left; }
 .member-photo { position: relative; border-radius: var(--radius); overflow: hidden; background: var(--sand-deep); }
 .member-photo img {
