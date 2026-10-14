@@ -645,3 +645,6 @@ html:not(.js) .rv { opacity: 1; transform: none; }
    size rather than resolution; the 200px source is ample at this scale */
 .badge-emdria { display: block; width: 116px; flex: none; }
 .badge-emdria img { width: 100%; height: auto; display: block; }
+
+/* note under a clinician who is not on online booking yet */
+.member-note { margin: 14px 0 0; font-size: .89rem; color: var(--muted); max-width: 52ch; }
