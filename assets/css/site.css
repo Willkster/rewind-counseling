@@ -622,8 +622,14 @@ html:not(.js) .rv { opacity: 1; transform: none; }
 .sx-verified-seal img { max-width: 100%; height: auto; display: block; }
 
 /* footer credential badges */
-.footer-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 20px; }
-.badge-pt { flex: none; max-width: 130px; }
-.badge-pt .sx-verified-seal { display: block; margin-top: 0; max-width: 130px; }
-.badge-emdria { display: block; width: 72px; flex: none; }
-.badge-emdria img { width: 100%; height: auto; display: block; border-radius: 50%; }
+.footer-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: 22px; }
+
+/* Psychology Today injects its own img; size by height and let width follow,
+   so nothing gets clipped whatever dimensions they serve */
+.badge-pt { flex: none; }
+.badge-pt .sx-verified-seal { display: block; margin: 0; }
+.badge-pt .sx-verified-seal img { display: block; height: 52px; width: auto; max-width: none; }
+
+/* big enough that "Certified Therapist" is actually legible */
+.badge-emdria { display: block; width: 88px; flex: none; }
+.badge-emdria img { width: 100%; height: auto; display: block; }
