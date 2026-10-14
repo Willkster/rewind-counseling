@@ -623,12 +623,23 @@ html:not(.js) .rv { opacity: 1; transform: none; }
 
 /* Psychology Today injects its own img; size by height and let width follow,
    so nothing gets clipped whatever dimensions they serve */
-/* their script injects an inline <svg> (146x46), not an <img>, and any
-   max-width on the anchor clips it once scaled */
+/* Their script sets the seal as a CSS background-image and writes width and
+   height as INLINE styles on the anchor, which beat any stylesheet rule. With
+   no background-size the image draws at natural size and the box crops it.
+   Hence the !important overrides and background-size: contain, which
+   guarantees the whole badge fits whatever dimensions they serve.
+   Aspect ratio is 146:46. */
 .badge-pt { flex: none; }
-.badge-pt .sx-verified-seal { display: block; margin: 0; max-width: none; overflow: visible; }
-.badge-pt .sx-verified-seal svg,
-.badge-pt .sx-verified-seal img { display: block; height: 58px; width: auto; max-width: none; }
+.badge-pt .sx-verified-seal {
+  display: block !important;
+  width: 174px !important;
+  height: 55px !important;
+  max-width: none !important;
+  margin: 0 !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: left center !important;
+}
 
 /* the badge text is small relative to the badge, so this is about display
    size rather than resolution; the 200px source is ample at this scale */
