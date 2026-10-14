@@ -620,3 +620,9 @@ html:not(.js) .rv { opacity: 1; transform: none; }
 /* Psychology Today verified seal in the footer */
 .sx-verified-seal { display: block; margin-top: 18px; max-width: 150px; }
 .sx-verified-seal img { max-width: 100%; height: auto; display: block; }
+
+/* footer credential badges */
+.footer-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 20px; }
+.footer-badges .sx-verified-seal { display: block; margin-top: 0; max-width: 130px; }
+.badge-emdria { display: block; width: 72px; flex: none; }
+.badge-emdria img { width: 100%; height: auto; display: block; border-radius: 50%; }
