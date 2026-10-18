@@ -648,3 +648,6 @@ html:not(.js) .rv { opacity: 1; transform: none; }
 
 /* note under a clinician who is not on online booking yet */
 .member-note { margin: 14px 0 0; font-size: .89rem; color: var(--muted); max-width: 52ch; }
+
+/* language note on a team card */
+.member .lang { color: var(--teal-deep); font-weight: 550; }
